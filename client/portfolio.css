@@ -26,7 +26,7 @@ h2
 
 [data-scroll]
 {
-    transition: 0.6s ease;
+    transition: 0.5s ease-in-out;
 }
 
 li [data-scroll="in"]
@@ -43,7 +43,7 @@ li [data-scroll="out"]
 
 #about [data-scroll="in"]
 {
-    transform: translateX(-2);
+    transform: translateX(-2px);
     opacity: 1;
 }
 #about [data-scroll="out"]
@@ -80,7 +80,6 @@ img[data-scroll="out"]
 
 
 #third-container button:active{color: orangered; background: white;}
-.container-image img:hover{transform: rotate(-45deg)}
 .second-box h2:hover{transform: rotate(-3deg)}
 .icons svg:hover{transform: rotate(13deg)}
 h2:hover{transform: skew(0, -10deg)}
@@ -118,6 +117,11 @@ h5{
         overflow-x: auto;
         align-items: center;
         /*box-shadow: 10px 0 7px -5px black, 10px 0 7px -5px black inset;*/
+    }
+
+    .scale {
+        font-size: 15px!important;
+        transform: translate(-15px)
     }
     
     .work{
@@ -270,10 +274,9 @@ h5{
     width: 90%;
     margin: auto;
     height: 750px;
-    background-color: rgb(222, 224, 230);
+    background-color: #fdffff;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-
 }
 
 .icons 
@@ -431,6 +434,7 @@ transform: skew(0, -8deg)
     font-size: 12px;
     font-weight: bold;
     text-align: center;
+    transform: skewX(-3.8deg);
 }
 
 .first-box h3
@@ -460,6 +464,7 @@ transform: skew(0, -8deg)
 {
     text-align: center;
     padding: 25px;
+    box-sizing: border-box;
     margin: auto;
     height: auto;
     width: 350px;
@@ -475,10 +480,11 @@ transform: skew(0, -8deg)
 }
 .second-box p
 {
+    font-size: 18px;
     padding: 15px;
     border-radius: 15px;
-    color: #404040;
-    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+    font-family: 'Open Sans', sans-serif;
 }
 .second-box h2{
     /*background-color: black;*/
@@ -635,7 +641,7 @@ div .container-image{
     width: 92%;
 }
 
-.jquery{
+.nodejs{
     width: 90%;
 }
 

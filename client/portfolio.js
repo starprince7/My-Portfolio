@@ -3,7 +3,7 @@
 
 ScrollOut({
     once:true,
-    threshold: 0.97     
+    threshold: 0.98     
 });
 
 
@@ -95,12 +95,12 @@ window.addEventListener("load", function(event) {
 
         var i = 0
         var images = []
-        var time = 1700
+        var time = 3000
 
         images[0] = './images/html.png'
         images[1] = './images/css2.png'
         images[2] = './images/javascript.png'
-        images[4] = './images/jquery2.png'
+        images[4] = './images/nodejs.png'
         images[3] = './images/reactjs.png'
 
         function changeImage() {
