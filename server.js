@@ -3,10 +3,9 @@ const app = express()
 const mongoose = require('mongoose')
 const fs = require('fs')
 const PortfolioClient = require('./models/clientschema')
-require('dotenv').config()
 
 // db connection 
-const dbURI = process.env.DB_PASSWORD
+const dbURI = 'mongodb+srv://starprince:starprince7@starprince.m9v4i.mongodb.net/Projects?retryWrites=true&w=majority'
 
 const port = process.env.PORT || 4000
 mongoose.connect(dbURI)
@@ -20,14 +19,6 @@ mongoose.connect(dbURI)
         console.log(err)
     })
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('portfolioproject 3.0'))
-    app.get('*', (req, res) => {
-        res.sendFile('./portfolioclient 3.0/index.html', {
-            root: __dirname
-        })
-    })
-}
 
 // Middleware 
 app.use(express.urlencoded({ extended: true }))
