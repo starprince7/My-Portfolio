@@ -352,7 +352,7 @@ section {
 }
 .portfolio-back2 {
   height: fit-content;
-  background-image: url("/images/portfolio-back2.jpg");
+  background-image: url("/images/Portfolio-back2.jpg");
   background-size: cover;
   /*background-position: center;*/
   background-attachment: scroll;
