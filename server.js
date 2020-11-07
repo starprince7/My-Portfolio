@@ -3,9 +3,10 @@ const app = express()
 const mongoose = require('mongoose')
 const fs = require('fs')
 const PortfolioClient = require('./models/clientschema')
+require('dotenv').config()
 
 // db connection 
-const dbURI = 'mongodb+srv://starprince:starprince7@starprince.m9v4i.mongodb.net/Projects?retryWrites=true&w=majority'
+const dbURI = process.env.DB_PASSWORD
 
 const port = process.env.PORT || 4000
 mongoose.connect(dbURI)
