@@ -15,6 +15,7 @@ body {
   /*font-family: 'Roboto', sans-serif;*/
   font-size: 20px;
   background-color: #323133;
+  overflow-x: hidden;
 }
 h2 {
   transition: all 0.9s;
@@ -253,7 +254,7 @@ h5 {
 }
 
 .main-container {
-  padding: 90px 0;
+  padding: 20px 0;
   /*flex-wrap: nowrap;*/
   box-sizing: border-box;
   /*padding-bottom: 17.5vw;*/
@@ -381,7 +382,7 @@ section {
 }
 
 .portfolio-text > h3 {
-  font-size: 90px;
+  font-size: 76px;
   font-weight: bold;
 }
 
