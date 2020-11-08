@@ -24,7 +24,7 @@ h2 {
 /*========================== Scroll-Animation ===================================================*/
 
 [data-scroll] {
-  transition: 0.6s ease-out;
+  transition: 0.4s ease-out;
 }
 
 li [data-scroll="in"] {
