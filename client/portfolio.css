@@ -626,6 +626,8 @@ div .container-image {
   transition: all 0.5s;
 }
 #nav-bar a {
+  border: solid red;
+  cursor: pointer;
   border-bottom: 1px solid;
   border-radius: 10px;
   padding: 5px 10px;

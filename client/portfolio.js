@@ -5,6 +5,8 @@ ScrollOut({
   threshold: 0.98,
 });
 
+
+
 var right = document.querySelector(".mobile__navbar");
 const move = () => {
   const leftAway1 = document.querySelector(".left-away__one");
@@ -20,6 +22,7 @@ const move = () => {
     
   right.classList.toggle("active");
 };
+
 
 //======================================================
 
@@ -85,3 +88,5 @@ function changeImage() {
 setInterval("changeImage()", time);
 
 window.load = changeImage;
+
+
