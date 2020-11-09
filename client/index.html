@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link rel="stylesheet" type="text/css" /*media="(max-width: 400px)"*/ href="portfolio.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Josefin+Slab:wght@300&family=Montserrat+Alternates:wght@300&family=Philosopher&family=Poiret+One&family=Rajdhani:wght@300&family=Roboto&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
@@ -16,9 +16,8 @@
 
 <body>
         
-
-    <div  class="nav-right">
-        <button onclick="disband()" id="button-close">close</button>
+<!-- Mobile Links -->
+    <div  class="mobile__navbar">
         <div class="links">
             <ul>
                 <li class="items-right" ><a href="#">Home</a></li>
@@ -34,7 +33,13 @@
         <div id="main-display">
     <div id="header">
       <a href="#">portfolio</a>
-        <button onclick="move()" class="button">menu</button>
+      <!-- The Menu Button -->
+      <div  onclick="move()" class="menu__container">
+        <i class="left-away__one"></i>
+        <i class="left-away__two"></i>
+        <i class="rise-left"></i>
+        <i class="scale-right"></i>
+      </div>
         
     </div>
 
@@ -55,7 +60,7 @@
                 </div>
                 <div class="line"></div>
                 <div class="intro">
-                    <h4> front-end web engineer, I build apps for the web</h4>
+                    <h4>A front-end web developer.</h4>
                 </div>
             </div>
         </div>
@@ -79,7 +84,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 m6 l3 pull-s2 pull-m3 pull-l3">
-                        <div class="first-box" style="order: 1">
+                        <div class="first-box" style="order: 1; margin: 20px 0">
                             <img name="slides" width="150" height="150"  data-scroll>
                         </div>
                     </div>

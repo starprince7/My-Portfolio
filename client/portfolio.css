@@ -15,7 +15,7 @@ body {
   /*font-family: 'Roboto', sans-serif;*/
   font-size: 20px;
   background-color: #323133;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }
 h2 {
   transition: all 0.9s;
@@ -136,12 +136,12 @@ h5 {
         border: solid red;
     }*/
 
-  #first-container,
+  /* #first-container,
   #second-container,
   #third-container,
   #main-display {
     max-width: 100%;
-  }
+  } */
 
   .first-box:nth-child(1) {
     z-index: -1;
@@ -152,11 +152,11 @@ h5 {
   position: fixed;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 50px;
   background-color: white /*rgb(250, 117, 68)*/;
-  z-index: 1;
-  padding: 5px;
+  z-index: 100;
+  padding: 5px 0;
   border-top: 1px solid orangered;
   box-shadow: 0 3px 10px 0 dimgrey;
 }
@@ -171,7 +171,7 @@ h5 {
 
 #main-display {
   background-image: url(./images/codescreen500.jpg);
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center bottom;
   background-size: cover;
   /*object-fit: fill;*/
@@ -219,9 +219,9 @@ h5 {
 
 .intro {
   padding: 10px;
-  font-size: 25px;
+  font-size: 10px;
   line-height: 25px;
-  border-bottom: solid #cc2e05;
+/*   border-bottom: solid #cc2e05; */
   border-radius: 13px;
 
   position: relative;
@@ -245,11 +245,12 @@ h5 {
   overflow: hidden;
   color: rgb(220, 227, 245);
   line-height: 110px;
-  position: relative;
-  left: 23vw;
+  position: absolute;
+  left: 0;
   text-align: center;
-  top: 14%;
-  width: 50%;
+  top: 0%;
+  padding: 25vh 0;
+  width: 100%;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -315,7 +316,6 @@ h5 {
 }
 
 section {
-  width: 100%;
   height: fit-content;
   color: 010f1a;
 }
@@ -453,7 +453,7 @@ section {
   padding: 15px;
   border-radius: 15px;
   color: #313131;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .second-box h2 {
   /*background-color: black;*/
@@ -576,7 +576,10 @@ div .container-image {
 
 @media (max-width: 500px) {
   .skills {
-    width: 300px;
+    width: 280px;
+  }
+  .skills-inner {
+    height: 13px!important;
   }
 }
 .skills-inner {
@@ -668,7 +671,7 @@ div .container-image {
 
 /*===================my Nav-Bar Logic ==================================*/
 
-.nav-right {
+.mobile__navbar {
   overflow-y: hidden;
   display: flex;
   justify-content: center;
@@ -676,7 +679,7 @@ div .container-image {
   text-align: center;
   position: fixed;
   top: 50px;
-  right: 0;
+  left: 0;
   width: 0;
   height: 90vh;
   opacity: 0;
@@ -687,6 +690,12 @@ div .container-image {
   /*border: solid red;*/
   /*border-bottom-left-radius: 15px;*/
 }
+
+.active {
+  width: 100%;
+  opacity: 1;
+}
+
 /*nav-left
 {
     position: fixed;
@@ -737,7 +746,6 @@ div .container-image {
   font-weight: bold;
 }
 .links {
-  width: 50%;
   height: 300px;
   background-color: transparent;
   box-sizing: border-box;
@@ -762,6 +770,75 @@ div .container-image {
   transform: skew(0, 8deg);
 }
 .links a:hover {
-  transform: scale(1.5) skew(0, 16.5deg);
+  transform: scale(1.5) skew(0, 10deg);
   color: orangered;
+}
+
+
+/* ========== Menu Button Toggle Animation ============ */
+
+.menu__container {
+  margin: auto;
+  width: fit-content;
+  height: auto;
+  padding: 5px 20px;
+  position: relative;
+  top: 5px;
+  right: 1vw;
+ 
+}
+
+.menu__container i {
+  margin: 3px;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  display: block;
+  border-radius: 2.5px;
+}
+
+.left-away__one {
+  width: 20px!important;
+  opacity: 1;
+  transition: transform 0.2s, ease opacity .2s;
+}
+.left-away__two {
+  width: 26px!important;
+  opacity: 1;
+  transition: transform 0.5s, ease opacity .2s;
+}
+
+
+.rise-left {
+  /* transform: rotate(-45deg) translate(15px, -10px); */
+  transition: all 0.5s ease;
+}
+
+.scale-right {
+  transform: rotate(45deg) translate(-18px, -30px) scale(0.6);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+
+
+/* Actived Classess */
+.activate-leftaway__one {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+.activate-leftaway__two {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+
+
+.activate__riseleft {
+  transform: rotate(-45deg) translate(7px, -5px);
+}
+
+.activate__scaleright {
+  transform: rotate(45deg) translate(-11px, -14px) scale(1);
+  opacity: 1;
 }
