@@ -9,7 +9,11 @@ require('dotenv').config()
 const dbURI = process.env.DB_PASSWORD
 
 const port = process.env.PORT || 4000
-mongoose.connect(dbURI)
+mongoose.connect(dbURI, {
+  extended: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
     .then(result => {
         console.log('Connected to the Database!...')
         app.listen(port, () => {
@@ -43,4 +47,3 @@ app.get('/', (req, res) => {
     console.log('incoming Request from client')
     res.sendFile('./client/index.html', {root: __dirname})
 })
->>>>>>> parent of b40c791... Optimized Porfolio Site Load time
