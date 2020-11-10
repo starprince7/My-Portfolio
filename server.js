@@ -3,10 +3,10 @@ const app = express()
 const mongoose = require('mongoose')
 const fs = require('fs')
 const PortfolioClient = require('./models/clientschema')
-require('dotenv').config()
+/* require('dotenv').config() */
 
 // db connection 
-const dbURI = process.env.DB_PASSWORD
+const dbURI = 'mongodb+srv://starprince:starprince7@starprince.m9v4i.mongodb.net/Projects?retryWrites=true&w=majority'
 
 const port = process.env.PORT || 4000
 mongoose.connect(dbURI, {
@@ -26,20 +26,19 @@ mongoose.connect(dbURI, {
 
 
 // Middleware 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(express.static('client'))
 
 
-app.post('/portfolio/clients', (req, res) => {
+app.post('/clients', (req, res) => {
+  console.log('Reg just came in!...', req.body)
     const newClient = new PortfolioClient(req.body)
     newClient.save()
         .then(result => {
-            res.sendFile('./PortfolioProject 3.0/thankyou.html', {
-                root: __dirname
-            })
+            res.json(result)
         })
-        .catch(() => {
-            res.send('Please Complete the fields')
+        .catch((error) => {
+            res.send(error)
         })
 })
 

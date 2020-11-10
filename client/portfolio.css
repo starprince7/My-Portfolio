@@ -412,6 +412,10 @@ section {
   transform: skewX(-3.8deg);
 }
 
+/* .box__one-first {
+  border: solid red;
+}
+ */
 .first-box h3 {
   color: red;
   font-size: 20px;
@@ -612,7 +616,11 @@ div .container-image {
 }
 
 #nav-bar {
+  position: absolute;
+  top: 2vh;
+  left: 5vw;
   z-index: 1;
+  width: fit-content;
 }
 #nav-bar ul {
   position: relative;
@@ -626,7 +634,6 @@ div .container-image {
   transition: all 0.5s;
 }
 #nav-bar a {
-  border: solid red;
   cursor: pointer;
   border-bottom: 1px solid;
   border-radius: 10px;
@@ -747,6 +754,10 @@ div .container-image {
   text-align: center;
   font-weight: bold;
 }
+
+button {
+  cursor: pointer;
+}
 .links {
   height: 300px;
   background-color: transparent;
@@ -784,7 +795,7 @@ div .container-image {
   width: fit-content;
   height: auto;
   padding: 5px 20px;
-  position: relative;
+  position: absolute;
   top: 5px;
   right: 1vw;
  

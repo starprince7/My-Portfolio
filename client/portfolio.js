@@ -68,12 +68,12 @@ window.addEventListener("load", function (event) {
 
 var i = 0;
 var images = [];
-var time = 3000;
+var time = 3500;
 
-images[0] = "./images/html.png";
-images[1] = "./images/css2.png";
-images[2] = "./images/javascript.png";
-images[4] = "./images/nodejs.png";
+images[0] = "./images/html5_black.png";
+images[1] = "./images/css_black.png";
+images[2] = "./images/new_javascript2.png";
+images[4] = "./images/new_nodejs.png";
 images[3] = "./images/reactjs.png";
 
 function changeImage() {
