@@ -56,7 +56,7 @@ window.addEventListener("load", function (event) {
   var intro = document.querySelector(".intro");
 
   hi.style.opacity = "1";
-  name.style.top = "0";
+  name.style.left = "0";
   name.style.opacity = "1";
   intro.style.bottom = "0";
   intro.style.opacity = "1";
