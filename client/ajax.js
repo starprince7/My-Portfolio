@@ -34,6 +34,8 @@ form.addEventListener("submit", (e) => {
         .json()
         .then((data) => {
           loader.style.display = "none";
+          form.name.value = "";
+          form.email.value = "";
           console.log("Response from the backend :", data);
           if (data) {
             modal_back.style.display = "block";
