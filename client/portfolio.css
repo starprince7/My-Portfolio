@@ -24,7 +24,7 @@ h2 {
 /*========================== Scroll-Animation ===================================================*/
 
 [data-scroll] {
-  transition: 0.4s ease-out;
+  transition: 0.7s ease;
 }
 
 li [data-scroll="in"] {
@@ -37,11 +37,11 @@ li [data-scroll="out"] {
 }
 
 #about [data-scroll="in"] {
-  transform: translateX(-2px);
+  transform: translateY(-2px);
   opacity: 1;
 }
 #about [data-scroll="out"] {
-  transform: translateX(200px);
+  transform: translateY(200px);
   opacity: 0;
 }
 h3[data-scroll="in"] {
@@ -157,6 +157,7 @@ h5 {
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 50px;
   background-color: white /*rgb(250, 117, 68)*/;
@@ -218,7 +219,7 @@ h5 {
   /*right: -320px;*/
   overflow: hidden;
   opacity: 0;
-  transition: left 0.4s ease-out, opacity 0.6s ease;
+  transition: left 0.4s ease, opacity 0.6s ease;
   transition-delay: 1.6s;
 }
 
@@ -227,7 +228,7 @@ h5 {
 /*   border-bottom: solid #cc2e05; */
   font-size: 22px;
   padding: 0 25px;
-  background-color: black;
+  background-color: #232224;
   width: fit-content;
   position: relative;
   bottom: -30px;
@@ -458,10 +459,10 @@ section {
   /*background: rgba(19, 18, 18, 0.4)*/
 }
 .second-box p {
-  font-size: 18px;
+  font-size: 14px;
   padding: 15px;
   border-radius: 15px;
-  color: #313131;
+  color: #3f3f3f;
   font-family: 'Montserrat', sans-serif;
 }
 .second-box h2 {
@@ -794,13 +795,13 @@ button {
 /* ========== Menu Button Toggle Animation ============ */
 
 .menu__container {
-  margin: auto;
+  margin: 0 -9px;
   width: fit-content;
   height: auto;
   padding: 5px 20px;
   position: absolute;
   top: 5px;
-  right: 1vw;
+  right: 0px;
  
 }
 
@@ -810,7 +811,7 @@ button {
   height: 5px;
   background-color: black;
   display: block;
-  border-radius: 2.5px;
+  border-radius: 0 2.5px 0 0;
 }
 
 .left-away__one {
@@ -857,4 +858,108 @@ button {
 .activate__scaleright {
   transform: rotate(45deg) translate(-11px, -14px) scale(1);
   opacity: 1;
+}
+
+
+
+/* Loader Animation Here */
+.loader {
+  display: none;
+}
+
+.background-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background: rgba(10, 10, 10, .4);
+  border-radius: 2px;
+  box-shadow: 3px px 6px silver;
+  z-index: 100;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
+#loader {
+  width: 25px;
+  height: 25px;
+  border: solid 10px transparent;
+  border-left: solid 4px white;
+  border-top: solid 4px white;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+/* ==== Modal Pop - Up ====== */
+.modal__background {
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 10, .5);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#modal {
+  width: 60%;
+  height: 200px;
+  display: none;
+  position: fixed;
+  left: 20vw;
+  top: 20vh;
+  animation-name: alert;
+  animation-duration: 0.6s;
+  animation-timing-function: ease;
+}
+@keyframes alert {
+  from{
+    top: -10%;
+    opacity: 0;
+  }
+  to {
+    top: 20vh;
+    opacity: 1;
+  }
+}
+  
+.modal__flex {
+  border: solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 10px;
+  background-color: orangered;
+}
+
+#modal h3 {
+  color: whitesmoke;
+  border-bottom: red;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 15px;
+  margin-top: 0;
+}
+
+#close-btn {
+  display: block;
+  cursor: pointer;
+}
+
+/* p{
+  height: 50px;
+  padding: 15px;
+} */
+.footer {
+  border-top: solid red;
+  color:orangered
 }
