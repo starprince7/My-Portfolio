@@ -501,6 +501,29 @@ div .container-image {
   transform: skew(0, 9deg) translate(50px, 0px) rotate(-6deg);
 }
 
+/* Materialize Here! */
+.override__project-card {
+  border-radius: 10px!important;
+  border: solid 2px rgb(68, 68, 68);
+  transform: translate(120px);
+}
+@media(max-width: 500px) {
+  .override__project-card  {
+    border: none;
+    transform: translate(0)
+  }
+}
+
+.card-title {
+  font-size: 20px!important;
+  letter-spacing: 1.5px;
+}
+
+/* .container {
+  justify-content: center!important;
+  border: solid red;
+} */
+
 #third-container {
   margin: 150px 0;
   margin: auto;
