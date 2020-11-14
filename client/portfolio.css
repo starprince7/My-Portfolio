@@ -80,9 +80,8 @@ h2:hover {
 .scale:hover {
   background-color: fff;
 }
-li:hover {
-  transform: skew(0, -3deg);
-}
+
+
 h3:hover:not(h3.name) {
   transform: skew(0, -13deg);
 }
@@ -234,10 +233,12 @@ h5 {
   padding: 0 25px;
   background-color: #232224;
   width: fit-content;
+  border-radius: 3px;
   position: relative;
   bottom: -30px;
+  transform: scale(.5);
   opacity: 0;
-  transition: bottom 0.4s ease, opacity 0.5s;
+  transition: bottom 0.4s ease, opacity 0.5s, transform .6s ease;
   transition-delay: 2.5s;
 }
 
@@ -504,8 +505,10 @@ div .container-image {
 /* Materialize Here! */
 .override__project-card {
   border-radius: 10px!important;
-  border: solid 2px rgb(68, 68, 68);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
   transform: translate(120px);
+  margin-right:20px;
 }
 @media(max-width: 500px) {
   .override__project-card  {
@@ -517,6 +520,10 @@ div .container-image {
 .card-title {
   font-size: 20px!important;
   letter-spacing: 1.5px;
+}
+
+.z-depth-4 {
+  border-bottom: solid 1px crimson
 }
 
 /* .container {
@@ -653,7 +660,7 @@ div .container-image {
 
 #nav-bar {
   position: absolute;
-  top: 1vh;
+  top: 0px;
   left: 3vw;
   z-index: 1;
   width: fit-content;
@@ -671,8 +678,8 @@ div .container-image {
 }
 #nav-bar a {
   cursor: pointer;
-  border-bottom: 1px solid;
-  border-radius: 6px;
+  border: 1px solid;
+  border-radius: 16px;
   padding: 5px 10px;
   width: 300px;
   text-decoration: none;
@@ -686,7 +693,8 @@ div .container-image {
 
 #nav-bar a:hover {
   color: crimson;
-  transform: scale(2);
+  border: 1px solid crimson;
+  cursor: none;
 }
 
 #mobile-navbar {
@@ -720,8 +728,9 @@ div .container-image {
   overflow-y: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  padding-top: 80px;
   position: fixed;
   top: 50px;
   left: 0;
@@ -798,7 +807,6 @@ button {
   height: 300px;
   background-color: transparent;
   box-sizing: border-box;
-  padding: 20px;
   text-align: center;
   color: white;
   opacity: 1;
@@ -810,9 +818,10 @@ button {
 }
 .links a {
   display: block;
-  margin-top: 5px;
+  padding: 10px;
+  margin-top: 30px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 35px;
   font-weight: 900;
   color: rgba(185, 52, 3, 0.918);
   transition: all 0.2s;
@@ -827,14 +836,14 @@ button {
 /* ========== Menu Button Toggle Animation ============ */
 
 .menu__container {
-  margin: 0 -9px;
+  overflow: hidden;
+  margin: 0 1.5px;
   width: fit-content;
   height: auto;
-  padding: 5px 20px;
+  padding: 5px 10px;
   position: absolute;
   top: 5px;
-  right: 0px;
- 
+  right: 0px; 
 }
 
 .menu__container i {
@@ -849,12 +858,12 @@ button {
 .left-away__one {
   width: 20px!important;
   opacity: 1;
-  transition: transform 0.2s, ease opacity .2s;
+  transition: transform 0.2s ease, opacity .3s ease;
 }
 .left-away__two {
   width: 26px!important;
   opacity: 1;
-  transition: transform 0.5s, ease opacity .2s;
+  transition: transform 0.5s ease, opacity .3s ease;
 }
 
 
@@ -864,20 +873,20 @@ button {
 }
 
 .scale-right {
-  transform: rotate(45deg) translate(-18px, -30px) scale(0.6);
+  transform: rotate(45deg) translate(-18px, -15px) scale(0.6);
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 
 
 /* Actived Classess */
 .activate-leftaway__one {
-  transform: translateX(-100px);
+  transform: translateX(-100px) scale(.1);
   opacity: 0;
 }
 .activate-leftaway__two {
-  transform: translateX(-100px);
+  transform: translateX(-100px) scale(.1);
   opacity: 0;
 }
 

@@ -2,7 +2,7 @@
 
 ScrollOut({
   once: true,
-  threshold: 0.2,
+  threshold: 0.99,
 });
 
 
@@ -59,6 +59,7 @@ window.addEventListener("load", function (event) {
   name.style.left = "0";
   name.style.opacity = "1";
   intro.style.bottom = "0";
+  intro.style.transform = "scale(1)";
   intro.style.opacity = "1";
 });
 
