@@ -10,7 +10,6 @@ const dbURI = 'mongodb+srv://starprince:starprince7@starprince.m9v4i.mongodb.net
 
 const port = process.env.PORT || 4000
 mongoose.connect(dbURI, {
-  extended: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

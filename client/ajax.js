@@ -9,6 +9,11 @@ const loader = document.querySelector(".loader");
 const modal_back = document.querySelector(".modal__background");
 const Modal = document.querySelector("#modal");
 const close_modal = document.getElementById("close-btn");
+const intro_loader = document.querySelector('.intro__loader')
+
+window.addEventListener('load', () => {
+  intro_loader.style.display = 'none'
+})
 
 close_modal.addEventListener("click", () => {
   modal_back.style.display = "none";
