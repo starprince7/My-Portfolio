@@ -166,8 +166,7 @@ h5 {
   background-color: white /*rgb(250, 117, 68)*/;
   z-index: 100;
   padding: 5px 0;
-  border-top: 1px solid orangered;
-  box-shadow: 0 3px 10px 0 dimgrey;
+  box-shadow: 0 1px 5px black;
 }
 #header a {
   text-decoration: none;
