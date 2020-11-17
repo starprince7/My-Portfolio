@@ -2,7 +2,7 @@
 
 ScrollOut({
   once: true,
-  threshold: 0.99,
+  threshold: 0.999999,
 });
 
 

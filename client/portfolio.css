@@ -24,7 +24,7 @@ h2 {
 /*========================== Scroll-Animation ===================================================*/
 
 [data-scroll] {
-  transition: 0.7s ease;
+  transition: 0.6s ease-out;
 }
 
 li [data-scroll="in"] {
@@ -229,14 +229,14 @@ h5 {
 .intro {
   margin: auto;
 /*   border-bottom: solid #cc2e05; */
-  font-size: 22px;
-  padding: 0 25px;
+  font-size: 19px;
+  padding: 2px 45px;
   background-color: #232224;
   width: fit-content;
   border-radius: 3px;
   position: relative;
   bottom: -30px;
-  transform: scale(.5);
+  transform: scale(.86);
   opacity: 0;
   transition: bottom 0.4s ease, opacity 0.5s, transform .6s ease;
   transition-delay: 2.5s;
@@ -261,7 +261,7 @@ h5 {
   top: 0%;
   padding: 20vh 0;
   width: 100%;
-  font-family: 'Goldman', cursive;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .main-container {
@@ -502,6 +502,7 @@ div .container-image {
   transform: skew(0, 9deg) translate(50px, 0px) rotate(-6deg);
 }
 
+
 /* Materialize Here! */
 .override__project-card {
   border-radius: 10px!important;
@@ -607,6 +608,18 @@ div .container-image {
   display: block;
   color: orangered;
   font-size: 14px;
+}
+
+.email__container {
+  border: 1px solid grey;
+  width: fit-content;
+  margin: 20px auto;
+  border-radius: 3.5px;
+}
+
+.email__container a {
+  padding: 20px;
+  font-size: 25px;
 }
 
 .phone b {
