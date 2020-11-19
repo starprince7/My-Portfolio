@@ -44,6 +44,16 @@ li [data-scroll="out"] {
   transform: translateY(200px);
   opacity: 0;
 }
+
+#about__section[data-scroll="in"] {
+  transform: translateX(0);
+  opacity: 1;
+}
+#about__section[data-scroll="out"] {
+  transform: translateX(200px);
+  opacity: 0;
+}
+
 h3[data-scroll="in"] {
   transform: translateY(-2);
   opacity: 1;
@@ -199,12 +209,13 @@ h5 {
   width: 93px;
   transform: translateY(60px);
   margin: auto;
-  border-radius: 2.8px;
+  border-radius: 3.5px;
 
   position: relative;
   opacity: 0;
   transition: opacity 0.4s ease-in;
   transition-delay: 0.5s;
+  background-color: #cc2e05;
 }
 
 .name {
@@ -228,9 +239,13 @@ h5 {
 .intro {
   margin: auto;
 /*   border-bottom: solid #cc2e05; */
+  font-family: 'Goldman', cursive;
   font-size: 19px;
+  font-weight: 800;
+  line-height: 50px;
   padding: 2px 45px;
   background-color: #232224;
+  max-width: 380px;
   width: fit-content;
   border-radius: 3px;
   position: relative;
@@ -452,38 +467,63 @@ section {
   box-sizing: border-box;
   margin: auto;
   height: auto;
-  width: 350px;
+  width: fit-content;
+  max-width: 550px;
+
   font-size: 16px;
   color: #cc2e05;
   background-color: transparent;
   transform: rotate(7deg);
 }
-.second-box:nth-child(2) {
-  /*  border-bottom: solid #cc2e05; */
-  /*background: rgba(19, 18, 18, 0.4)*/
-}
+
 .second-box p {
-  font-size: 14px;
+  text-align: left;
+  font-size: 15px;
   padding: 15px;
   border-radius: 15px;
   color: #3f3f3f;
   font-family: 'Montserrat', sans-serif;
 }
+@media(min-width: 600px) {
+  .second-box p {
+    position: relative;
+    left: -15px;
+  }
+}
+
+
+/* About Header  */
 .second-box h2 {
   /*background-color: black;*/
-  padding: 15px 5px;
+  padding: 0px 25px;
   margin-bottom: 26px;
-  width: auto;
-  margin: auto;
-  font-size: 30px;
+  width: fit-content;
+
+  text-align: right;
+  font-size: 40px;
+  font-weight: 500;
   color: black;
-  border-bottom: solid red 5px;
+  text-align: right;
+  position: relative;
+  left: 50%;
 }
+@media(min-width: 600px) {
+  .second-box h2 {
+    transform: translate(40px)
+  }
+}
+@media(max-width: 500px) {
+  .second-box h2 {
+    margin-left: -25px;
+    transform: translate(-75px)
+  }
+}
+
+
 .container-image img {
   /*box-shadow: 0px 0px 15px 0px  black;*/
   width: 90%;
   height: auto;
-  border-radius: 39px;
   transition: all 1s ease;
 }
 div .container-image {
@@ -492,13 +532,14 @@ div .container-image {
   align-content: center;
   width: 200px;
   height: 200px;
-  padding: 15px;
+  padding: 18px;
+  margin-bottom: 20px;
   box-sizing: border-box;
   background-color: #f0562f;
   border: solid red 1px;
   border-radius: 150px;
   overflow: hidden;
-  transform: skew(0, 9deg) translate(50px, 0px) rotate(-6deg);
+  transform: skew(0, 9deg) translate(0px, 0px) rotate(-7deg);
 }
 
 
@@ -1053,11 +1094,17 @@ button {
   z-index: 200;
   width: 100%;
   height: 100vh;
-  background-color: white;
+
 }
 
 .intro__loader > img {
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
+}
+@media(max-width: 500px) {
+  .intro__loader > img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
