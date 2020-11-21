@@ -69,10 +69,10 @@ window.addEventListener("load", function (event) {
 
 var i = 0;
 var images = [];
-var time = 3500;
+var time = 2000;
 
 images[0] = "./images/html5_black.png";
-images[1] = "./images/css_black.png";
+images[1] = "./images/css_black2.png";
 images[2] = "./images/new_javascript2.png";
 images[4] = "./images/new_nodejs.png";
 images[3] = "./images/reactjs.png";
