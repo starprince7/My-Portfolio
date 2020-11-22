@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+/* const mongoose = require("mongoose");
 const fs = require("fs");
-const PortfolioClient = require("./models/clientschema");
+const PortfolioClient = require("./models/clientschema"); */
 /* require("dotenv").config(); */
+
 
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log("Server is live on port 4000");
-});
+    console.log("Server is live on port 4000");
+  });
 
 app.get("/", (req, res) => {
   console.log("incoming Request from client");
@@ -46,7 +47,7 @@ app.post("/clients", (req, res) => {
     from: "princeagezinweke@gmail.com",
     to: "rexxrandolph@gmail.com",
     subject: "COME WORK FOR ME PRINCE!!!",
-    text: `Hi, my name is ${name} Here is my email ${email}`,
+    text: `Hey prince, My name is ${name} Here is my email ${email} get back as soon as possible.`,
   };
 
   transport
