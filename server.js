@@ -3,26 +3,18 @@ const app = express();
 const mongoose = require("mongoose");
 const fs = require("fs");
 const PortfolioClient = require("./models/clientschema");
-require("dotenv").config();
-
-// db connection
-const dbURI = process.env.DB_PASSWORD;
+/* require("dotenv").config(); */
 
 const port = process.env.PORT || 4000;
-mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then((result) => {
-    console.log("Connected to the Database!...");
-    app.listen(port, () => {
-      console.log("Server is live on port 4000");
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+
+app.listen(port, () => {
+  console.log("Server is live on port 4000");
+});
+
+app.get("/", (req, res) => {
+  console.log("incoming Request from client");
+  res.sendFile("./client/index.html", { root: __dirname });
+});
 
 // Middleware
 app.use(express.json());
@@ -82,9 +74,4 @@ app.post("/clients", (req, res) => {
   //         .catch(err => console.log("ERROR OCCURED!!!"))
   //      })
   //     .catch(error => console.log("ERROR CANNOT RENDER EJS TEMPLATE!!!"))
-});
-
-app.get("/", (req, res) => {
-  console.log("incoming Request from client");
-  res.sendFile("./client/index.html", { root: __dirname });
 });
