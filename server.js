@@ -56,7 +56,7 @@ app.post("/clients", (req, res) => {
       console.log("MESSAGE SENT!!!");
       res.send({ msg: "success" });
     })
-    .catch((err) => console.log("ERROR OCCURED!!!"));
+    .catch((err) => console.log("ERROR OCCURED!!!==============", err));
 
   // const ejs = require('ejs')
 
