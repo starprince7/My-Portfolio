@@ -42,9 +42,13 @@ form.addEventListener("submit", (e) => {
           form.name.value = "";
           form.email.value = "";
           console.log("Response from the backend :", data);
-          if (data) {
+          if (data.msg) {
             modal_back.style.display = "block";
             Modal.style.display = "block";
+          }
+
+          if (data.error) {
+            alert(data.error)
           }
         })
         .catch((err) => console.log(err));

@@ -3,7 +3,7 @@ const app = express();
 /* const mongoose = require("mongoose");
 const fs = require("fs");
 const PortfolioClient = require("./models/clientschema"); */
-/* require("dotenv").config(); */
+require("dotenv").config();
 
 const port = process.env.PORT || 4000;
 
@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.static("client"));
 
 // Handle all client "Post" information Here!
-app.post("/clients", (req, res) => {
+app.post("/clients", async (req, res) => {
   console.log("Reg just came in!...", req.body);
   const { name, email } = req.body;
   // const newClient = new PortfolioClient(req.body)
@@ -35,55 +35,39 @@ app.post("/clients", (req, res) => {
 
   const nodemailer = require("nodemailer");
   const nodemailGun = require("nodemailer-mailgun-transport");
+  // New Mailing Packages
+  const Mailgun = require('mailgun.js')
+  const formData = require('form-data')
 
-  const auth = {
-    auth: {
-      api_key: "05de05c7aa84acab9a4c8b665692517c-2af183ba-41c8acf9",
-      domain: "sandbox0fea1f853ea44ca199a270a246db3d42.mailgun.org",
-    },
-  };
+  const mailgun = new Mailgun(formData)
+  const MY_DOMAIN = 'savinglifes.org'
 
-  const transport = nodemailer.createTransport(nodemailGun(auth));
+  const auth_credentials = {
+    username: 'api',
+    key: process.env.MAILGUN_API_KEY,
+    url: 'https://api.eu.mailgun.net'
+  }
 
-  //   const transport = nodemailer.createTransport({
-  //     service: "gmail",
-  //     auth: {
-  //       user: "rexxrandolph@gmail.com",
-  //       pass: "starprincean",
-  //     },
-  //   });
+  const client = mailgun.client(auth_credentials)
 
-  const mailOptions = {
-    from: "rexxrandolph@gmail.com",
+  const mail_options = {
+    from: "*Portfolio Website codeplugservices@gmail.com*",
     to: "princeagezinweke@gmail.com",
-    subject: "COME WORK FOR ME PRINCE!!!",
+    subject: "Portfolio Site Contact Form",
     text: `Hey prince, My name is ${name} Here is my email ${email} get back to me as soon as possible.`,
   };
+  
+    try {
+      const mailSuccess = await client.messages.create(MY_DOMAIN, mail_options);
+      
+      if (mailSuccess) {
+        console.log("MESSAGE SENT!!!");
+        res.send({ msg: "success" });
+      }
 
+    } catch (e) {
+      console.log('ERROR SENDIND eMAIL >>>', e)
+      res.send({ error: "Something went wrong!" });
+    }
 
-  transport
-    .sendMail(mailOptions)
-    .then((success) => {
-      console.log("MESSAGE SENT!!!");
-      res.send({ msg: "success" });
-    })
-    .catch((err) => console.log("ERROR OCCURED!!!==============", err));
-
-  // const ejs = require('ejs')
-
-  // ejs.renderFile(__dirname + "/mail.ejs", { name: "Prince" })
-  //     .then(data => {
-  //         const mailOptions = {
-  //             from: 'princeagezinweke@gmail.com',
-  //             to: 'rexxrandolph@gmail.com',
-  //             subject: 'COME WORK FOR ME PRINCE!!!',
-  //             text: "Here is my email", email,
-  //             html: data
-  //         }
-
-  //         transport.sendMail(mailOptions)
-  //         .then(success => console.log("MESSAGE SENT!!!"))
-  //         .catch(err => console.log("ERROR OCCURED!!!"))
-  //      })
-  //     .catch(error => console.log("ERROR CANNOT RENDER EJS TEMPLATE!!!"))
 });
